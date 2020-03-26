@@ -14,6 +14,8 @@ public class RestEndpoint {
     @Column(name = "RESPONSE_BODY")
     private String responseBody;
 
+
+
     public RestEndpoint(String url, String responseBody) {
         this.url = url;
         this.responseBody = responseBody;

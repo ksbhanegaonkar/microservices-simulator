@@ -24,7 +24,7 @@ public class ActionController {
     public String registerservice(@RequestBody String body, HttpServletRequest req) {
         String url = JsonUtil.getJsonValue(body, "url");
         String responseBody = JsonUtil.getJsonValue(body, "responsebody");
-       simulatorEngine.registerService(url,responseBody);
+        simulatorEngine.registerService(url,responseBody);
         return req.getRequestURL().toString().replace("services/registerservice","simulator"+url);
     }
 
