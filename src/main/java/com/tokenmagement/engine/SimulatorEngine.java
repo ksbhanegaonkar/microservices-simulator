@@ -27,7 +27,7 @@ public class SimulatorEngine {
 
     public RestEndpoint registerService(String name, String description,String url, String responseBody){
         RestEndpoint e = new RestEndpoint(name,description,url,responseBody);
-        simulatorRequestMap.put(e.getUrl(),e);
+        simulatorRequestMap.put("/simulator"+e.getUrl(),e);
         service.registerEndpoint(e);
         return e;
     }
