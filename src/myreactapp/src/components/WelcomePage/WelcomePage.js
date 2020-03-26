@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import './WelcomePage.css';
 import RestEndpoint from '../RestEndpoint/RestEndpoint';
+import {getRequest,postRequest} from '../Utils/RestUtils';
 
 
 
@@ -14,6 +15,8 @@ class WelcomePage extends Component {
 
     this.setState({restEndpoints:[{name:"test",url:"/test"},
     {name:"test",url:"/test"},{name:"test",url:"/test"},{name:"test",url:"/test"}]});
+
+    getRequest("getallrestservices",data => this.setState({restEndpoints:data}));
 
   }
 

@@ -40,4 +40,8 @@ public class SimulatorEngine {
         else return "Url not registered";
     }
 
+    public List<RestEndpoint> getAllRestServices(){
+        return service.getAllEndpoints();
+    }
+
 }
