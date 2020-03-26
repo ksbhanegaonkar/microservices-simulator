@@ -8,13 +8,14 @@ import org.springframework.stereotype.Component;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 @Component
 public class SimulatorEngine {
 
     @Autowired
     ApplicationService service;
-    private Map<String, RestEndpoint> simulatorRequestMap = new HashMap<>();
+    private Map<String, RestEndpoint> simulatorRequestMap = new ConcurrentHashMap<>();
 
     public SimulatorEngine() {
         //initEngine();
