@@ -1,36 +1,47 @@
 package com.tokenmagement;
 
-import com.tokenmagement.engine.SimulatorEngine;
-import org.springframework.beans.factory.annotation.Value;
+import com.tokenmagement.entity.RestEndpoint;
+import com.tokenmagement.repository.RestEndpointRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+
+import java.util.List;
 
 @SpringBootApplication
+@ComponentScan(basePackages = "com.tokenmagement")
 public class MavenreactjsspringbootApplication implements CommandLineRunner {
-	//@Autowired
-	//ServiceCounterRepository serviceCounterRepository;
+	@Autowired
+    RestEndpointRepository repo;
+
     public static void main(String[] args) {
         SpringApplication.run(MavenreactjsspringbootApplication.class, args);
     }
 
 
 
+/*
     @Bean
-    public SimulatorEngine createSimulatorEngine(
-            @Value("${tokencounter.count}") int tokenCounters,
-            @Value("${normal.servicecounter}") int normalServiceCounters,
-            @Value("${premium.servicecounter}") int premiumServiceCounters) {
+    public SimulatorEngine createSimulatorEngine() {
         SimulatorEngine engine = new SimulatorEngine();
         return engine;
     }
+*/
 
     
 	  @Override public void run(String... args) {
-		  //ServiceCounter counter = new ServiceCounter();
-		  
 
+//          RestEndpoint p = new RestEndpoint("/test123","test12response");
+//		  repo.save(p);
+
+//          RestEndpoint r = repo.getByUrl("/test12");
+//          System.out.println(r);
+
+
+//          List<RestEndpoint> e = repo.findAll();
+//          System.out.println(e);
 	  
 	  }
 	  
