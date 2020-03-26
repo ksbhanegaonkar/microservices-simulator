@@ -25,10 +25,11 @@ public class SimulatorEngine {
         list.stream().forEach(e->simulatorRequestMap.put(e.getUrl(),e));
     }
 
-    public void registerService(String url, String responseBody){
-        RestEndpoint e = new RestEndpoint("/simulator"+url,responseBody);
+    public RestEndpoint registerService(String name, String description,String url, String responseBody){
+        RestEndpoint e = new RestEndpoint(name,description,url,responseBody);
         simulatorRequestMap.put(e.getUrl(),e);
         service.registerEndpoint(e);
+        return e;
     }
 
     public String getServiceResponse(String url){

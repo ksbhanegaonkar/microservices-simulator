@@ -20,11 +20,13 @@ public class ActionController {
 	
 
     @PostMapping("/registerservice")
-    public String registerservice(@RequestBody String body, HttpServletRequest req) {
+    public RestEndpoint registerservice(@RequestBody String body, HttpServletRequest req) {
+        String name = JsonUtil.getJsonValue(body, "name");
+        String description = JsonUtil.getJsonValue(body, "description");
         String url = JsonUtil.getJsonValue(body, "url");
-        String responseBody = JsonUtil.getJsonValue(body, "responsebody");
-        simulatorEngine.registerService(url,responseBody);
-        return req.getRequestURL().toString().replace("services/registerservice","simulator"+url);
+        String responseBody = JsonUtil.getJsonValue(body, "responseBody");
+        return simulatorEngine.registerService(name,description,url,responseBody);
+
     }
 
     @GetMapping("/getallrestservices")

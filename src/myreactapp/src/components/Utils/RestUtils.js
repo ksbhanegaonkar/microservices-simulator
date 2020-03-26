@@ -1,6 +1,6 @@
 export const baseURL = "http://localhost:8080";
 export const postRequest =(action,data,onDataReceive) =>{
-    fetch(new Request(baseURL+'/services'+action),
+    fetch(new Request(baseURL+'/services/'+action),
     {
       headers:{
         'Content-Type': 'application/json',

@@ -12,11 +12,23 @@ class WelcomePage extends Component {
     
   }
 
+
+
   componentDidMount(){
+
 
 
     getRequest("getallrestservices",data => this.setState({restEndpoints:data}));
 
+  }
+
+  registerNewRestService(s){
+    postRequest("registerservice",s,(data)=>{
+      console.dir(data);
+      //let newRestEndpoints =this.setState.restEndpoints;
+     // newRestEndpoints.push(data);
+      this.setState({restEndpoints : [...this.state.restEndpoints, data]});
+    })
   }
 
 
@@ -36,7 +48,7 @@ class WelcomePage extends Component {
             </div>
             <div className="col-sm border border-primary ">
              Rest Service Detail
-             <RestEndpointDetail></RestEndpointDetail>
+             <RestEndpointDetail registerNewRestService={this.registerNewRestService.bind(this)}></RestEndpointDetail>
             </div>
           </div>
 

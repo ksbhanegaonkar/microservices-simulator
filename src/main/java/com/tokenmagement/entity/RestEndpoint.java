@@ -25,6 +25,14 @@ public class RestEndpoint {
         this.responseBody = responseBody;
     }
 
+
+    public RestEndpoint(String name, String description, String url, String responseBody) {
+        this.name = name;
+        this.description = description;
+        this.url = url;
+        this.responseBody = responseBody;
+    }
+
     public RestEndpoint() {
     }
 
