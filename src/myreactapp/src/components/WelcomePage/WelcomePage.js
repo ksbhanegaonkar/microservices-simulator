@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import './WelcomePage.css';
 import RestEndpoint from '../RestEndpoint/RestEndpoint';
 import {getRequest,postRequest} from '../Utils/RestUtils';
+import RestEndpointDetail from '../RestEndpoint/RestEndpointDetail';
 
 
 
@@ -13,8 +14,6 @@ class WelcomePage extends Component {
 
   componentDidMount(){
 
-    this.setState({restEndpoints:[{name:"test",url:"/test"},
-    {name:"test",url:"/test"},{name:"test",url:"/test"},{name:"test",url:"/test"}]});
 
     getRequest("getallrestservices",data => this.setState({restEndpoints:data}));
 
@@ -37,6 +36,7 @@ class WelcomePage extends Component {
             </div>
             <div className="col-sm border border-primary ">
              Rest Service Detail
+             <RestEndpointDetail></RestEndpointDetail>
             </div>
           </div>
 
