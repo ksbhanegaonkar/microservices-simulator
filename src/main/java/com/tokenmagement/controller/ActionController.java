@@ -34,4 +34,14 @@ public class ActionController {
         return simulatorEngine.getAllRestServices();
     }
 
+    @GetMapping("/test/{id}/test")
+    public String test1(@RequestParam String id) {
+        return "test1"+id;
+    }
+    @GetMapping("/test/{id}/test1")
+    public String test2(@RequestParam String id) {
+        return "test2"+id;
+    }
+
+
 }
